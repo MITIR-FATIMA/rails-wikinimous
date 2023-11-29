@@ -1,1 +1,25 @@
-<h1></h1>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-text">
+<%= link_to("Wikinimous", articles_path) %>
+    </span>
+  </div>
+</nav>
+
+
+ <span class="navbar-text">
+       New Article
+      </span>
+
+<h2></h2>
+<%# <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault"> %>
+    <%= @article.title %>
+    <%= @article.content %>
+  <%# </label> %>
+<%= link_to("Back to edit", edit_article_path(@article)) %>
+
+<%= link_to "Delete",
+  article_path(@article),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>

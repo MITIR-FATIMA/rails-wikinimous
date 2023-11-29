@@ -1,12 +1,25 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light bg-light ">
   <div class="container-fluid">
-    <span class="navbar-text">
-      Wikinimous
+    <span class="navbar-text fs-1">
+    <%= link_to("Wikinimous", articles_path) %>
     </span>
+  </div>
+<div class="collapse navbar-collapse" id="navbarText">
+      <span class="navbar-text">
+        <%= link_to("New Article", articles_path) %>
+      </span>
   </div>
 </nav>
 
+<%# <%= link_to("Add a new article", articles_new_path) %>
+ <%# <span class="navbar-text fs-1">
+       <%= link_to("New Article", articles_path) %>
+  <%# </span> %> %>
 
- <span class="navbar-text">
-       New Article
-      </span>
+<div class="form-check">
+  <ul>
+    <% @articles.each do |article| %>
+      <li><%= link_to article.title, article_path(article) %></li>
+    <% end %>
+  </ul>
+</div>
